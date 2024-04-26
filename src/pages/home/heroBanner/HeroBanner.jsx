@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import home from "../../../assets/home.jpg"
 import "./style.scss";
 
 import useFetch from "../../../hooks/useFetch";
@@ -19,7 +18,7 @@ const HeroBanner = () => {
     useEffect(() => {
         const bg =
             url.backdrop +
-            data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path;
+            data?.results?.[Math.floor(Math.random() * 2)]?.backdrop_path;
         setBackground(bg);
     }, [data]);
 
@@ -33,7 +32,7 @@ const HeroBanner = () => {
         <div className="heroBanner">
             {!loading && (
                 <div className="backdrop-img">
-                    <Img src={home} />
+                    <Img src={background} />
                 </div>
             )}
 
